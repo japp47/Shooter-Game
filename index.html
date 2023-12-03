@@ -1,0 +1,120 @@
+
+<meta name = "viewport" content="width = device-width, initial-scale=1, user-scalable = no "/>
+
+<style>
+    body{
+        margin: 0;
+        font-family: 'courier';
+        background-color: black;
+    } 
+
+    * {
+      touch-action: none;
+    }
+</style>
+<div
+  style="
+  position: absolute;
+  color: white;
+  padding: 10px;
+  
+  font-size: 18px;
+  user-select: none;
+  "
+  >
+  <span> <b>Score: </b><span id="scoreEl">0</span>
+</div>
+
+<div style="position: absolute; 
+top: 0;
+right: 0;
+padding: 8px;">
+<svg 
+id="volumeUp"
+xmlns="http://www.w3.org/2000/svg" 
+fill="none"  
+viewBox="0 0 24 24" 
+stroke="currentColor" 
+stroke-width="2"
+style="
+color: white; 
+width: 20px; 
+height: 20px;
+cursor: pointer; 
+"
+>
+  <path 
+    stroke-linecap="round" 
+    stroke-linejoin="round" 
+    d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+</svg>
+
+<svg 
+id = "volumeOff"
+xmlns="http://www.w3.org/2000/svg"  fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="
+color: white; 
+width: 20px; 
+height: 20px;
+cursor: pointer;
+display: none; 
+" >
+  <path stroke-linecap="round" stroke-linejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" clip-rule="evenodd" />
+  <path stroke-linecap="round" stroke-linejoin="round" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+</svg>
+</div>
+
+<div
+id = "modalEl"
+style="display: none;position: absolute; background-color: rgb(243, 245, 234); top: 50%; transform: translate(-50%, -50%);
+  left: 50%; padding: 15px; max-width: 500px; width: 100%; text-align: center;
+  border-radius: 6px;" >
+
+  <label style=" font-size: 18px; color: rgb(85, 84, 84);"><b> Game Over </b></label>
+  <h1 
+  id = "modalScoreEl"
+  style="font-size: 44px; margin-bottom: 0; margin-top: 8px;"><b> 0 </b> </h1>
+  <p style="margin: 0; font-size: 16px; color: #2c2929;"> Points</p>
+   <button 
+   id="buttonEl"
+   style="margin-top: 10px; background-color: rgb(63, 14, 240); 
+   border: none; color: rgb(255, 255, 255);
+    padding: 8px 8px; border-radius: 5px;
+    cursor: pointer; "> Restart Game </button>
+
+</div>
+<div
+id = "startModalEl"
+ style="position: absolute; background-color: rgb(243, 245, 234); top: 50%; transform: translate(-50%, -50%);
+  left: 50%; padding: 15px; max-width: 500px; width: 100%; text-align: center;
+  border-radius: 6px;" >
+
+   
+  <h1 
+  style="font-size: 28px; margin-bottom: 0; margin-top: 8px">
+Shooter 
+</h1>
+  <p style="margin: 0; font-size: 16px; color: #2c2929;"> Points</p>
+   <button 
+   id="startButtonEl"
+   style="margin-top: 10px; background-color: rgb(63, 14, 240); 
+   border: none; color: rgb(255, 255, 255);
+    padding: 8px 8px; border-radius: 5px;
+    cursor: pointer; "> Start Game </button>
+
+
+</div>
+<canvas></canvas>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" 
+integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" 
+crossorigin="anonymous" referrerpolicy="no-referrer">
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" 
+integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" 
+crossorigin="anonymous" referrerpolicy="no-referrer">
+</script>
+
+<!-- <script src="./classes.js"></script> -->
+<script src="./index.js"></script>
+
